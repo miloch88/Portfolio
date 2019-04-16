@@ -17,8 +17,16 @@ function changeBackground() {
 
 setInterval(changeBackground, 10000);
 
+//Burger menu
 $('.burger').on('click', function () {
     $('.fas, .far, nav, .top, .wrapper').toggleClass('show');
+});
+
+//Scroll to top by arrow
+$('.arrow').on('click', function () {
+    $('body, html').animate({
+        scrollTop: 0
+    }, 500)
 });
 
 // Scroll to 
@@ -29,12 +37,19 @@ $('nav a').on('click', function () {
     }, 500)
 });
 
-// $('div.logo div.skill img').on('click', function () {
-//     $('div.skill div i').toggleClass('star');
-// });
+$(document).on('scroll', function () {
 
-$(document).on('scroll', function(){
-    if($(this).scrollTop() > $('section.skills').outerHeight()*(3/5) + $('section.about').offset().top){
+    // Appear arrow
+    if ($(this).scrollTop() > $('section.about').offset().top) {
+        $('div.arrow').addClass('show');
+    }else{
+        $('div.arrow').removeClass('show');
+        $('div.skill div i').removeClass('star');
+    }
+
+
+    //Appear stars
+    if ($(this).scrollTop() > $('section.skills').outerHeight() * (3 / 5) + $('section.about').offset().top) {
         $('div.skill div i').addClass('star');
     }
 })

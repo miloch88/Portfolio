@@ -32,9 +32,6 @@
     color: #FE7F2D;
     z-index: 2;
     font-size: 35px;
-}
-
-.burger:hover {
     cursor: pointer;
 }
 
@@ -47,15 +44,32 @@
     display: inline-block;
 }
 
-.topArrow {
+.arrow {
     position: fixed;
     bottom: 5%;
     right: 5%;
     font-size: 35px;
     color: #FE7F2D;
     z-index: 5;
-    transform: rotate(-90deg);
     display: none;
+    cursor: pointer;
+}
+
+.arrow.show {
+    display: block;
+    animation: arrow 1s linear both;
+}
+
+@keyframes arrow {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .name {
@@ -82,7 +96,7 @@ nav.show {
     top: 100px;
 }
 
-ul {
+nav.show ul {
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -90,13 +104,13 @@ ul {
     padding: 20px;
 }
 
-li {
+nav.show li {
     flex-basis: 25%;
     text-align: center;
     padding: 10px;
 }
 
-a {
+nav.show a {
     display: inline-block;
     text-decoration: none;
     line-height: 100%;
@@ -104,11 +118,10 @@ a {
     color: white;
     border-bottom: 2px solid #233D4D;
     padding-bottom: 3px;
-
     transition: 0.5s;
 }
 
-a:hover {
+nav.show a:hover {
     border-bottom: 2px solid #FE7F2D;
     color: #FE7F2D;
     transform: scale(1.1)
@@ -252,64 +265,9 @@ section.about {
     overflow: hidden;
 }
 
-section.about h1,
-section.about h2,
-section.about h3 {
-    position: absolute;
-    top: 100px;
-    left: 0;
-    font-size: 28px;
-    letter-spacing: 4px;
-    padding: 10px 20px;
-    margin: 10px 10px 10px 25px;
-    border-left: 5px solid #FE7F2D;
-    text-transform: uppercase;
-}
-
-section.about h2 {
-    top: 125px;
-    margin-top: 5px;
-    font-size: 18px;
-    padding-top: 40px;
-    font-weight: inherit;
-    letter-spacing: 0;
-    text-transform: none;
-}
-
-section.about h3 {
-    top: 250px;
-    border: none;
-    font-size: 20px;
-    font-weight: inherit;
-    text-transform: none;
-    padding: 0;
-}
-
-section.about h3 span {
-    color: #FE7F2D;
-    opacity: 0;
-    animation: background 10s linear infinite;
-}
-
-section.about p {
-    position: absolute;
-    display: block;
-    text-align: justify;
-    top: 350px;
-    margin: 10px 25px 10px 25px;
-    font-size: 16px;
-    line-height: 32px;
-}
-
-section.about p span {
-    color: #FE7F2D;
-}
-
 section.about img {
     display: none;
 }
-
-
 
 @keyframes gray {
     0% {
@@ -371,34 +329,10 @@ section.about img {
 /* SKILLS */
 
 section.skills {
-    background-color: rgb(247, 247, 241);
+    background-color: rgba(247, 247, 241, 0.5);
     position: relative;
     width: 100%;
     height: 1200px;
-}
-
-section.skills h1,
-section.skills h2,
-section.skills h3 {
-    position: absolute;
-    top: 100px;
-    right: 0;
-    font-size: 28px;
-    letter-spacing: 4px;
-    padding: 10px 20px;
-    margin: 10px 25px 10px 25px;
-    border-right: 5px solid #FE7F2D;
-    text-transform: uppercase;
-}
-
-section.skills h2 {
-    top: 125px;
-    margin-top: 5px;
-    font-size: 18px;
-    padding-top: 40px;
-    font-weight: inherit;
-    letter-spacing: 0;
-    text-transform: none;
 }
 
 section.skills .logo {
@@ -432,13 +366,14 @@ div.skill div {
     display: absolute;
     line-height: 50px;
     flex-basis: 45%;
-    color: #FE7F2D;
+
 }
 
 div.skill div i {
     display: inline-block;
     opacity: 0;
     width: 22px;
+    color: #FE7F2D;
 }
 
 div.skill div i.star:nth-child(1) {
@@ -461,6 +396,7 @@ div.skill div i.star:nth-child(5) {
     animation: stars 1s 2s steps(60, end) 1 both;
 }
 
+
 @keyframes stars {
     0% {
         opacity: 0;
@@ -476,32 +412,114 @@ div.skill div i.star:nth-child(5) {
     }
 }
 
-section.skills h3 {
-    top: 850px;
-    border: none;
-    font-size: 20px;
-    font-weight: inherit;
-    text-transform: none;
-    padding: 0;
+/* QUOTE */
+
+section.quote {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-color: rgba(35, 61, 77, .7);
+    overflow: hidden;
 }
 
-section.skills h3 span {
-    color: #FE7F2D;
-}
-
-section.skills p.text {
+section.quote .quote_background {
     position: absolute;
-    display: block;
-    text-align: justify;
-    top: 900px;
-    margin: 10px 25px 10px 25px;
-    font-size: 16px;
-    line-height: 32px;
-    letter-spacing: 0;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    z-index: -1;
+    object-fit: cover;
 }
 
-section.about p span {
+section.quote .quote_background {
+    background-image: url(../img/notebook-1280538_1920.jpg);
+    background-size: cover;
+    background-position: right top;
+    background-attachment: fixed;
+}
+
+div.quote h1 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin: 0;
+}
+
+div.quote p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 360px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    color: white;
+}
+
+div.quote p span {
+    position: absolute;
+    top: 85%;
+    left: 60%;
+}
+
+
+/* CONTACT */
+
+section.contact {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+section.contact div.socials {
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 50px;
+}
+
+section.contact div.socials div.social {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 10px 25px;
+}
+
+section.contact div.socials div.social i {
+    min-width: 40px;
+    font-size: 35px;
     color: #FE7F2D;
+    text-align: center;
+}
+
+section.contact div.socials div.social span {
+    line-height: 35px;
+    color: black;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: 0.3s linear;
+    word-break: break-all;
+    text-decoration: none;
+}
+
+section.contact div.socials div.social a {
+    text-decoration: none;
+}
+
+section.contact div.socials div.social span:hover {
+    color: #FE7F2D;
+    
 }
 
 /* GALAXY S5 */
@@ -662,7 +680,7 @@ section.about p span {
         left: 0px;
     }
 
-    li {
+    nav.show li {
         flex-basis: 5%;
         text-align: center;
         padding: 10px;
@@ -704,3 +722,90 @@ section.about p span {
         z-index: -1;
     }
 }
+
+/* POPRAWIONE */
+
+section h1,
+section h2,
+section h3,
+section p {
+    position: absolute;
+    margin: 10px 25px 10px 25px;
+    padding: 10px 20px;
+}
+
+section h1 {
+    top: 100px;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+section h2 {
+    top: 145px;
+    font-size: 18px;
+    font-weight: inherit;
+    letter-spacing: 0;
+}
+
+section h3 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: inherit;
+    padding: 0;
+}
+
+section span {
+    color: #FE7F2D;
+}
+
+section.about h1,
+section.about h2,
+section.about h3,
+section.contact h1,
+section.contact h2,
+section.contact h3 {
+    left: 0;
+    border-left: 5px solid #FE7F2D;
+}
+
+section.about h3 {
+    top: 250px;
+    border: none;
+}
+
+section.about h3 span {
+    opacity: 0;
+    animation: background 10s linear infinite;
+}
+
+section.skills h1,
+section.skills h2,
+section.skills h3 {
+    right: 0;
+    border-right: 5px solid #FE7F2D;
+}
+
+section.skills h3 {
+    top: 850px;
+    border: none;
+}
+
+section p {
+    position: absolute;
+    padding: 0;
+    font-size: 16px;
+    text-align: justify;
+    letter-spacing: 2px;
+    line-height: 32px;
+}
+
+section.about p {
+    top: 350px;
+}
+
+section.skills p {
+    top: 900px;
+}
+
+/* POPRAWNE */
