@@ -2,188 +2,232 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Michał Miloch</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>MMWeb</title>
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 </head>
 
 <body>
 
-    <div class="top">
-        <div class="name ">MMWeb</div>
-        <div class="burger">
-            <i class="fas fa-bars show"></i>
-            <i class="far fa-times-circle"></i>
+  <div class="top">
+    <div class="name ">MMweb</div>
+    <div class="burger">
+      <i class="fas fa-bars show"></i>
+      <i class="far fa-times-circle"></i>
+    </div>
+  </div>
+
+  <div class="arrow"><i class="fas fa-arrow-circle-up"></i></div>
+
+  <nav>
+    <ul>
+      <li><a href="#" class="home">Home</a></li>
+      <li><a href="#" class="about">About</a></li>
+      <li><a href="#" class="skills">Skills</a></li>
+      <li><a class="port">Portfolio</a></li>
+      <li><a href="#" class="contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- TEMPORARY -->
+  <section class="portfolio">
+    <div class="modal">
+      <span class="hide"><i class="far fa-times-circle"></i></span>
+      <div class="cog">
+        <i class="fas fa-cog fa-spin"></i>
+      </div>
+      <div class="text">
+        <div>I'm sorry...</div>
+        <div>I'm still working on it.</div>
+        <div>You can see all my projects at:</div>
+      </div>
+      <div class="link">
+        <a href="https://bitbucket.org/miloch88"><i class="fab fa-bitbucket"></i></a>
+        <a href="https://github.com/miloch88"><i class="fab fa-github"></i></a>
+      </div>
+      <!--  -->
+    </div>
+  </section>
+  <!-- TEMPORARY -->
+
+  <div class="wrapper">
+    <header class="home" id="home">
+      <div class="background">
+        <img src="img/code-1.jpg" alt="background" class="background" />
+      </div>
+
+      <img src="img/panda-659186_640.png" alt="Panda" class="small" />
+      <div class="welcome">
+        <h1>Michał <span>Miloch</span></h1>
+        <h2>Backend Developer</h2>
+      </div>
+    </header>
+
+    <section class="about" id="about">
+      <div class="column">
+        <h1>About me</h1>
+        <h2>Main information about me</h2>
+
+        <h3>I'm Michał Miloch and <span>Backend Developer</span></h3>
+        <p>
+          Hi! My name is <span>Michał Miloch</span>. I am a Web Developer, and
+          I'm very passionate and dedicated to my work. I have acquired the
+          skills and knowledge necessary to make your project a success. I
+          enjoy every step of the design process, from discussion and
+          collaboration to concept and execution, but I find the most
+          satisfaction in seeing the finished product do everything for you
+          that it was created to do.
+        </p>
+      </div>
+
+      <img class="grey" src="img/panda-about1-grey.png" alt="" />
+      <img class="color" src="img/panda-about1.png" alt="" />
+    </section>
+
+    <section class="skills" id="skills">
+      <h1>Skills</h1>
+      <h2>Junior level</h2>
+
+      <div class="logo">
+        <div class="skill">
+          <img src="icons/java-seeklogo.com.svg" alt="Java" />
+          <div>Java</div>
+          <div>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="far fa-star"></i>
+          </div>
         </div>
-    </div>
+        <div class="skill">
+          <img src="icons/spring-seeklogo.com.svg" alt="Spring" />
+          <div>Spring</div>
+          <div>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="far fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
 
-    <div class="arrow">  <i class="fas fa-arrow-circle-up"></i> </div> 
+        <div class="skill">
+          <img src="icons/angular-seeklogo.com.svg" alt="Angular" />
+          <div>Angular</div>
+          <div>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="far fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
 
-    <nav>
-        <ul>
-            <li><a href="#" class="home">Home</a></li>
-            <li><a href="#" class="about">About</a></li>
-            <li><a href="#" class="skills">Skills</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#" class="contact">Contact</a></li>
-        </ul>
-    </nav>
+        <div class="skill">
+          <img src="icons/html5-with-wordmark-color.svg" alt="HTML" />
+          <div>HTML</div>
+          <div>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
 
-    <div class="wrapper">
+        <div class="skill">
+          <img src="icons/CSS3_logo_and_wordmark.svg" alt="CSS" />
+          <div>CSS</div>
+          <div>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
 
-        <header class="home" id="home">
-            <div class="background">
-                <img src="img/code-1.jpg" alt="background" class="background">
-            </div>
+        <div class="skill">
+          <img src="icons/javascript-js-seeklogo.com.svg" alt="JavaScript" />
+          <div>JavaScript</div>
+          <div>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i
+              class="far fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
 
-            <img src="img/panda-659186_640.png" alt="Panda" class="small">
-            <div class="welcome">
-                <h1>Michał <span>Miloch</span></h1>
-                <h2>Backend Developer</h2>
-            </div>
-        </header>
+        <div class="skill">
+          <img src="icons/mysql-seeklogo.com.svg" alt="MySql" />
+          <div>MySQL</div>
+          <div>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="far fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
 
-        <section class="about" id="about">
-            <div class="column">
-                <h1>About me</h1>
-                <h2>Main information about me</h2>
+        <div class="skill">
+          <img src="icons/git-seeklogo.com.svg" alt="Git" />
+          <div>GIT</div>
+          <div>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="far fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
+      </div>
 
-                <h3>I'm Michał Miloch and <span>Backend Developer</span></h3>
-                <p>Hi! My name is <span>Michał Miloch</span>. I am a Web Developer, and I'm very passionate and
-                    dedicated to
-                    my work. I have acquired the skills and knowledge necessary to make your project a success. I enjoy
-                    every step of the design process, from discussion and collaboration to concept and execution, but I
-                    find
-                    the most satisfaction in seeing the finished product do everything for you that it was created to
-                    do.
-                </p>
-            </div>
+      <h3><span>Additional</span> skills</h3>
+      <p>
+        Java SE 8, IntelliJ Idea, WebStorm, Design Patterns, Maven, Junit 5 ,
+        AssertJ, Mockito, Bootstrap, TypeScript, JQuery, MongoDB, Hibernate 5, REST
+        API, JSON, TDD, BDD, Apache JMeter, Selenium
+      </p>
+    </section>
 
-            <img class="grey" src="img/panda-about1-grey.png" alt="">
-            <img class="color" src="img/panda-about1.png" alt="">
-        </section>
+    <section class="quote">
+      <div class="quote_background"></div>
+      <div class="quote">
+        <h1>
+          <span><i class="fas fa-quote-left"></i></span>
+        </h1>
+        <p>
+          “We don't rise to the level of our expectations, we fall to the
+          level of our training.”<span>Archilochus</span>
+        </p>
+      </div>
+    </section>
 
-        <section class="skills" id="skills">
+    <section class="port" id="port">
 
-            <h1>Skills</h1>
-            <h2>Junior level</h2>
+    </section>
 
-            <div class="logo">
-                <div class="skill">
-                    <img src="icons/java-seeklogo.com.svg" alt="Java">
-                    <div>Java</div>
-                    <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="far fa-star"></i></div>
-                </div>
-                <div class="skill">
-                    <img src="icons/spring-seeklogo.com.svg" alt="Spring">
-                    <div>Spring</div>
-                    <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="far fa-star"></i><i class="far fa-star"></i></div>
-                </div>
+    <section class="contact" id="contact">
+      <h1>Contact</h1>
+      <h2>Get in touch with me</h2>
 
-                <div class="skill">
-                    <img src="icons/angular-seeklogo.com.svg" alt="Angular">
-                    <div>Angular</div>
-                    <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="far fa-star"></i><i class="far fa-star"></i></div>
-                </div>
+      <div class="socials">
+        <div class="social">
+          <i class="fas fa-mobile"></i>
+          <a href="">+48 668 822 672</a>
+        </div>
+        <div class="social">
+          <i class="fas fa-envelope"></i>
+          <a href="">michal.miloch@gmail.com</a>
+        </div>
+        <div class="social">
+          <i class="fab fa-linkedin"></i>
+          <a href="https://linkedin.com/in/michal-miloch">michal-miloch</a>
+        </div>
+        <div class="social">
+          <i class="fab fa-bitbucket"></i>
+          <a href="https://bitbucket.org/miloch88">miloch88</a>
+        </div>
+        <div class="social">
+          <i class="fab fa-github"></i>
+          <a href="https://github.com/miloch88">miloch88</a>
+        </div>
+        <div class="social">
+          <i class="fas fa-at"></i>
+          <a href="https://github.com/miloch88/Portfolio">mmweb</a>
+        </div>
+      </div>
+    </section>
+  </div>
 
-                <div class="skill">
-                    <img src="icons/html5-with-wordmark-color.svg" alt="HTML">
-                    <div>HTML</div>
-                    <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="far fa-star"></i></div>
-                </div>
+  <footer>&copy; Michał Miloch</footer>
 
-                <div class="skill">
-                    <img src="icons/CSS3_logo_and_wordmark.svg" alt="CSS">
-                    <div>CSS</div>
-                    <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="far fa-star"></i></div>
-                </div>
-
-                <div class="skill">
-                    <img src="icons/javascript-js-seeklogo.com.svg" alt="JavaScript">
-                    <div>JavaScript</div>
-                    <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i
-                            class="far fa-star"></i><i class="far fa-star"></i></div>
-                </div>
-
-                <div class="skill">
-                    <img src="icons/mysql-seeklogo.com.svg" alt="MySql">
-                    <div>MySQL</div>
-                    <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="far fa-star"></i><i class="far fa-star"></i></div>
-                </div>
-
-                <div class="skill">
-                    <img src="icons/git-seeklogo.com.svg" alt="Git">
-                    <div>GIT</div>
-                    <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="far fa-star"></i><i class="far fa-star"></i></div>
-                </div>
-            </div>
-
-            <h3><span>Additional</span> skills</h3>
-            <p>Java SE 8, IntelliJ Idea, WebStorm, Design Patterns, Maven, Junit 5 , AssertJ, Mockito,
-                Bootstrap, TypeScript, , MongoDB, Hibernate 5, REST API, JSON, TDD,
-                BDD, Apache JMeter, Selenium</p>
-
-        </section>
-
-        <section class="quote">
-            <div class="quote_background">
-            </div>
-            <div class="quote">
-                <h1><span><i class="fas fa-quote-left"></i></span></h1>
-                <p>“We don't rise to the level of our expectations, we fall to the level of our
-                    training.”<span>Archilochus</span></p>
-            </div>
-        </section>
-
-        <section class="contact" id="contact">
-
-            <h1>Contact</h1>
-            <h2>Get in touch with me</h2>
-
-            <div class="socials">
-                <div class="social">
-                    <i class="fas fa-mobile"></i><span>+48 668 822 672</span>
-                </div>
-                <div class="social">
-                    <i class="fas fa-envelope"></i><span>michal.miloch@gmail.com</span>
-                </div>
-                <div class="social">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://linkedin.com/in/michal-miloch"><span>michal-miloch</span>
-                </div>
-                <div class="social">
-                    <i class="fab fa-bitbucket"></i>
-                    <a href="https://bitbucket.org/miloch88"><span>miloch88</span>
-                </div>
-                <div class="social">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/miloch88"><span>miloch88</span>
-                </div>
-                <div class="social">
-                    <i class="fas fa-at"></i><a href="https://github.com/miloch88/Portfolio"><span>mmweb</span></a>
-                </div>
-            </div>
-
-        </section>
-
-    </div>
-
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

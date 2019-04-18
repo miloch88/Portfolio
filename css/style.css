@@ -8,6 +8,10 @@
     letter-spacing: 2px;
 }
 
+/* body.blur {
+    filter: blur(4px);
+} */
+
 .wrapper {
     transition: 0.5s linear;
 }
@@ -50,7 +54,7 @@
     right: 5%;
     font-size: 35px;
     color: #FE7F2D;
-    z-index: 5;
+    z-index: 3;
     display: none;
     cursor: pointer;
 }
@@ -78,7 +82,7 @@
     line-height: 100px;
     color: #FE7F2D;
     font-size: 25px;
-    text-transform: uppercase;
+
 }
 
 nav {
@@ -412,6 +416,94 @@ div.skill div i.star:nth-child(5) {
     }
 }
 
+/* PORTFOLIO */
+
+.wrapper.active {
+    filter: blur(2px);
+}
+
+section.portfolio {
+    display: none;
+}
+
+section.portfolio.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+section.portfolio .modal.active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 75%;
+    background-color: #233D4D;
+    border: 1px solid rgba(245, 245, 220, 0.2);
+    z-index: 4;
+    color: white;
+
+    margin: 0;
+    padding: 0;
+}
+
+section.portfolio div.cog {
+    display: block;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    color: rgba(245, 245, 220, 0.2);
+
+}
+
+section.portfolio .modal div.text {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    text-align: center;
+    font-size: 15px;
+    line-height: 35px;
+}
+
+section.portfolio .modal div.link {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    text-align: center;
+    justify-content: space-around;
+}
+
+section.portfolio .modal div.link a {
+    flex-basis: 50%;
+    font-size: 50px;
+    color: rgba(245, 245, 220, 0.2);
+}
+
+section.portfolio .modal.active span.hide i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    font-size: 30px;
+    cursor: pointer;
+}
+
 /* QUOTE */
 
 section.quote {
@@ -422,20 +514,15 @@ section.quote {
     overflow: hidden;
 }
 
+
 section.quote .quote_background {
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
     color: white;
-    text-align: center;
     z-index: -1;
-    object-fit: cover;
-}
-
-section.quote .quote_background {
     background-image: url(../img/notebook-1280538_1920.jpg);
     background-size: cover;
     background-position: right top;
@@ -469,13 +556,13 @@ div.quote p span {
     left: 60%;
 }
 
-
 /* CONTACT */
 
 section.contact {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 650px;
+    background-color: rgba(247, 247, 241, 0.5)
 }
 
 section.contact div.socials {
@@ -484,8 +571,8 @@ section.contact div.socials {
     width: 100%;
     display: flex;
     flex-direction: column;
-
     margin-bottom: 50px;
+
 }
 
 section.contact div.socials div.social {
@@ -494,6 +581,7 @@ section.contact div.socials div.social {
     flex-direction: row;
     justify-content: flex-start;
     margin: 10px 25px;
+    height: 35px;
 }
 
 section.contact div.socials div.social i {
@@ -503,224 +591,28 @@ section.contact div.socials div.social i {
     text-align: center;
 }
 
-section.contact div.socials div.social span {
-    line-height: 35px;
-    color: black;
-    margin-left: 15px;
-    cursor: pointer;
-    transition: 0.3s linear;
-    word-break: break-all;
-    text-decoration: none;
-}
-
 section.contact div.socials div.social a {
+    color: black;
+    margin-left: 25px;
+    line-height: 35px;
     text-decoration: none;
+    transition: 0.5s linear;
+    border-bottom: 2px solid rgba(247, 247, 241, 0.5);
 }
 
-section.contact div.socials div.social span:hover {
+section.contact div.socials div.social a:hover {
     color: #FE7F2D;
-    
+    transform: scale(1.1);
+    border-bottom: 2px solid #FE7F2D;
 }
 
-/* GALAXY S5 */
-@media (max-width: 680px) and (orientation: landscape) {
-    header img.small {
-        top: 50%;
-        width: 100px;
-        height: 100px;
-    }
-
-    .welcome h1 {
-        top: 70%;
-    }
-
-    .welcome h2 {
-        top: 80%;
-        max-width: 220px;
-        font-size: 18px;
-    }
-}
-
-/* iPad */
-@media (min-width: 750px) and (orientation: portrait) {
-    header img.small {
-        top: 40%;
-        width: 240px;
-        height: 240px;
-    }
-
-    .welcome h1 {
-        top: 60%;
-        font-size: 60px;
-    }
-
-    .welcome h2 {
-        top: 68%;
-        max-width: 420px;
-        font-size: 30px;
-
-        animation: typing 10s steps(60, end) infinite,
-            blinking 0.5s infinite;
-    }
-
-    section.about h3 {
-        font-size: 24px;
-    }
-
-    section.about p {
-        font-size: 20px;
-        line-height: 34px;
-    }
-
-    section.about h1,
-    section.about h2,
-    section.about h3,
-    section.about p {
-        margin: 10px 35px 10px 35px;
-
-    }
-
-}
-
-
-@media (min-width: 900px) and (orientation: landscape) {
-    header img.small {
-        top: 40%;
-        width: 240px;
-        height: 240px;
-    }
-
-    .welcome h1 {
-        top: 60%;
-        font-size: 60px;
-    }
-
-    .welcome h2 {
-        top: 68%;
-        max-width: 400px;
-        font-size: 30px;
-
-        animation: typing 10s steps(60, end) infinite,
-            blinking 0.5s infinite;
-    }
-
-    section.about h1,
-    section.about h2,
-    section.about h3,
-    section.about p {
-        width: 100%;
-        margin: 10px 100px 10px 100px;
-    }
-
-    section.about h1 {
-
-        font-size: 60px;
-    }
-
-    section.about h2 {
-        margin-top: 40px;
-        font-size: 20px;
-    }
-
-    section.about h3 {
-        top: 300px;
-        font-size: 30px;
-    }
-
-    section.about p {
-        top: 400px;
-        font-size: 22px;
-    }
-
-
-}
-
-/* Menu */
-@media (min-width: 1024px) and (orientation: landscape) {
-
-    .wrapper.show {
-        padding-left: 300px;
-    }
-
-    .top {
-        height: 100%;
-        left: -300px;
-        width: 300px;
-        border-right: 1px solid rgba(245, 245, 220, 0.2);
-        transition: 0.5s linear;
-    }
-
-    .top.show {
-        left: 0;
-        z-index: 1;
-    }
-
-    .name {
-        width: 100%;
-        left: 0;
-        text-align: center;
-    }
-
-    .burger {
-        position: absolute;
-        top: 75%;
-        left: 300px;
-        z-index: 10;
-    }
-
-    nav {
-        top: 100px;
-        left: -300px;
-        height: 100%;
-        width: 300px;
-        border-right: 1px solid rgba(245, 245, 220, 0.2);
-    }
-
-    nav.show {
-        left: 0px;
-    }
-
-    nav.show li {
-        flex-basis: 5%;
-        text-align: center;
-        padding: 10px;
-    }
-
-
-    .column {
-        position: relative;
-        width: 60%;
-    }
-
-    section.about h3 {
-        width: 100%;
-        white-space: wrap;
-    }
-
-    section.about img.grey {
-        display: block;
-        position: absolute;
-        right: 10%;
-        top: 15%;
-        transform: translate(10%, -10%) scale(1);
-        animation: gray 10s linear infinite;
-        overflow: hidden;
-        z-index: -2;
-    }
-
-
-    section.about img.color {
-        display: block;
-
-        height: 35%;
-        position: absolute;
-        right: 5%;
-        top: 60%;
-        transform: translate(10%, -10%) scale(1);
-        animation: color 10s linear infinite;
-        overflow: hidden;
-        z-index: -1;
-    }
+/* FOOTER */
+footer {
+    background-color: #233D4D;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
 }
 
 /* POPRAWIONE */
@@ -808,4 +700,656 @@ section.skills p {
     top: 900px;
 }
 
-/* POPRAWNE */
+/* POPRAWIONE */
+
+/* LUMIA */
+@media (max-width: 359px) {
+    header img.small {
+        top: 40%;
+    }
+
+    section.about {
+        height: 900px;
+    }
+
+    div.skill img {
+        height: 40px;
+    }
+
+    div.skill div {
+        font-size: 15px;
+    }
+
+    div.skill div i {
+        width: 20px;
+    }
+
+    div.quote p {
+        top: 45%;
+        width: 85%;
+        font-size: 14px;
+    }
+
+    div.quote p span {
+        top: 100%;
+    }
+
+    section.contact div.socials div.social a {
+        font-size: 13px;
+    }
+
+    section.portfolio div.cog {
+        top: 25%;
+        font-size: 70px;
+    }
+
+    section.portfolio .modal div.text {
+        font-size: 13px;
+    }
+
+    section.portfolio .modal div.link {
+        top: 80%;
+    }
+}
+
+/* GALAXY S5 */
+@media (max-width: 680px) and (orientation: landscape) {
+    header img.small {
+        top: 50%;
+        width: 100px;
+        height: 100px;
+    }
+
+    .welcome h1 {
+        top: 70%;
+    }
+
+    .welcome h2 {
+        top: 80%;
+        max-width: 220px;
+        font-size: 18px;
+    }
+
+    section.about {
+        min-height: 650px;
+    }
+
+    section.skills {
+        height: 1100px;
+    }
+
+    section.skills .logo {
+        width: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    section.portfolio div.cog {
+        top: 20%;
+        font-size: 60px;
+    }
+
+    section.portfolio .modal div.text {
+        font-size: 15px;
+        line-height: 30px;
+    }
+
+    section.portfolio .modal div.link {
+        top: 82%;
+        font-size: 20px;
+    }
+
+    section.contact div.socials {
+        width: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
+
+/* iPad */
+@media (min-width: 750px) and (orientation: portrait) {
+    header img.small {
+        top: 40%;
+        width: 240px;
+        height: 240px;
+    }
+
+    .welcome h1 {
+        top: 60%;
+        font-size: 60px;
+    }
+
+    .welcome h2 {
+        top: 68%;
+        max-width: 420px;
+        font-size: 30px;
+
+        animation: typing 10s steps(60, end) infinite,
+            blinking 0.5s infinite;
+    }
+
+    section h1,
+    section h2,
+    section h3,
+    section p {
+        position: absolute;
+        margin: 10px 50px 10px 50px;
+        padding: 10px 20px;
+    }
+
+    section h1 {
+        font-size: 48px;
+    }
+
+    section h2 {
+        top: 160px;
+        font-size: 20px;
+    }
+
+    section h3 {
+        font-size: 25px;
+        padding-left: 0;
+    }
+
+    section p {
+        padding: 0;
+        font-size: 22px;
+        line-height: 42px;
+    }
+
+    section.skills .logo {
+        width: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 22px;
+    }
+
+    section.skills p {
+        top: 920px;
+    }
+
+    section.quote {
+        height: 300px;
+    }
+
+    div.quote p {
+        width: 500px;
+    }
+
+    div.quote p span {
+        position: absolute;
+        top: 95%;
+        left: 75%;
+    }
+
+    section.contact div.socials {
+        font-size: 20px;
+        width: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    section.portfolio div.cog {
+        top: 25%;
+        font-size: 80px;
+    }
+
+    section.portfolio .modal div.text {
+        font-size: 25px;
+        line-height: 45px;
+    }
+
+    section.portfolio .modal div.link {
+        top: 75%;
+    }
+
+    section.portfolio .modal div.link a {
+        font-size: 80px;
+    }
+
+    footer {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1230px) and (min-width: 750px){
+    header img.small {
+        top: 40%;
+        width: 180px;
+        height: 180px;
+    }
+
+    .welcome h1 {
+        top: 60%;
+        font-size: 54px;
+    }
+
+    .welcome h2 {
+        top: 68%;
+        max-width: 330px;
+        font-size: 28px;
+
+        animation: typing 10s steps(60, end) infinite,
+            blinking 0.5s infinite;
+    }
+
+    section h1,
+    section h2,
+    section h3,
+    section p {
+        margin: 10px 100px 10px 100px;
+    }
+
+    section h1 {
+        font-size: 48px;
+    }
+
+    section h2 {
+        top: 160px;
+        font-size: 20px;
+    }
+
+    section h3 {
+        font-size: 25px;
+        padding-left: 0;
+    }
+
+    section.about p {
+        padding: 0;
+        font-size: 19px;
+        line-height: 38px;
+        width: 80%;
+    }
+
+    section.skills .logo {
+        width: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 22px;
+    }
+
+    section.skills .logo div i{
+        letter-spacing: 5px;
+    }
+        
+    div.skill div i {
+        width: 30px;
+    }
+
+    section.skills p{
+        width: 100%;
+        top: 920px;
+        font-size: 22px;
+        margin: 0;
+        padding: 10px 100px;
+    }
+
+    section.quote {
+        height: 300px;
+    }
+
+    div.quote p {
+        font-size: 25px;
+        line-height: 50px;
+        width: 600px;
+    }
+
+    div.quote p span {
+        top: 85%;
+    }
+
+    section.contact div.socials {
+        font-size: 20px;
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    section.contact div.socials div.social a {
+        margin-left: 60px;
+    }
+
+    section.portfolio .modal div.text {
+        font-size: 25px;
+        line-height: 45px;
+    }
+
+    section.portfolio .modal div.link {
+        top: 80%;
+    }
+
+    section.portfolio .modal div.link a {
+        font-size: 80px;
+    }
+
+    footer {
+        font-size: 22px;
+    }
+}
+
+/* Tutaj będzie trzeba porawić */
+/* @media (min-width: 1340px) and (min-width: 740px){
+    header img.small {
+        top: 40%;
+        width: 180px;
+        height: 180px;
+    }
+
+    .welcome h1 {
+        top: 60%;
+        font-size: 54px;
+    }
+
+    .welcome h2 {
+        top: 68%;
+        max-width: 330px;
+        font-size: 28px;
+
+        animation: typing 10s steps(60, end) infinite,
+            blinking 0.5s infinite;
+    }
+
+    section h1,
+    section h2,
+    section h3,
+    section p {
+        margin: 10px 100px 10px 100px;
+    }
+
+    section h1 {
+        font-size: 48px;
+    }
+
+    section h2 {
+        top: 160px;
+        font-size: 20px;
+    }
+
+    section h3 {
+        font-size: 25px;
+        padding-left: 0;
+    }
+
+    section.about p {
+        padding: 0;
+        font-size: 19px;
+        line-height: 38px;
+        width: 80%;
+    }
+
+    section.skills .logo {
+        width: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 22px;
+    }
+
+    section.skills .logo div i{
+        letter-spacing: 5px;
+    }
+        
+    div.skill div i {
+        width: 30px;
+    }
+
+    section.skills p{
+        width: 100%;
+        top: 920px;
+        font-size: 22px;
+        margin: 0;
+        padding: 10px 100px;
+    }
+
+    section.quote {
+        height: 300px;
+    }
+
+    div.quote p {
+        font-size: 25px;
+        line-height: 50px;
+        width: 600px;
+    }
+
+    div.quote p span {
+        top: 85%;
+    }
+
+    section.contact div.socials {
+        font-size: 20px;
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    section.contact div.socials div.social a {
+        margin-left: 60px;
+    }
+
+    section.portfolio .modal div.text {
+        font-size: 25px;
+        line-height: 45px;
+    }
+
+    section.portfolio .modal div.link {
+        top: 80%;
+    }
+
+    section.portfolio .modal div.link a {
+        font-size: 80px;
+    }
+
+    footer {
+        font-size: 22px;
+    }
+} */
+
+/* Tutaj też */
+/* @media (min-width: 1420px) and (min-width: 880px){
+    header img.small {
+        top: 40%;
+        width: 180px;
+        height: 180px;
+    }
+
+    .welcome h1 {
+        top: 60%;
+        font-size: 54px;
+    }
+
+    .welcome h2 {
+        top: 68%;
+        max-width: 330px;
+        font-size: 28px;
+
+        animation: typing 10s steps(60, end) infinite,
+            blinking 0.5s infinite;
+    }
+
+    section h1,
+    section h2,
+    section h3,
+    section p {
+        margin: 10px 100px 10px 100px;
+    }
+
+    section h1 {
+        font-size: 48px;
+    }
+
+    section h2 {
+        top: 160px;
+        font-size: 20px;
+    }
+
+    section h3 {
+        font-size: 25px;
+        padding-left: 0;
+    }
+
+    section.about p {
+        padding: 0;
+        font-size: 19px;
+        line-height: 38px;
+        width: 80%;
+    }
+
+    section.skills .logo {
+        width: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 22px;
+    }
+
+    section.skills .logo div i{
+        letter-spacing: 5px;
+    }
+        
+    div.skill div i {
+        width: 30px;
+    }
+
+    section.skills p{
+        width: 100%;
+        top: 920px;
+        font-size: 22px;
+        margin: 0;
+        padding: 10px 100px;
+    }
+
+    section.quote {
+        height: 300px;
+    }
+
+    div.quote p {
+        font-size: 25px;
+        line-height: 50px;
+        width: 600px;
+    }
+
+    div.quote p span {
+        top: 85%;
+    }
+
+    section.contact div.socials {
+        font-size: 20px;
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    section.contact div.socials div.social a {
+        margin-left: 60px;
+    }
+
+    section.portfolio .modal div.text {
+        font-size: 25px;
+        line-height: 45px;
+    }
+
+    section.portfolio .modal div.link {
+        top: 80%;
+    }
+
+    section.portfolio .modal div.link a {
+        font-size: 80px;
+    }
+
+    footer {
+        font-size: 22px;
+    }
+} */
+
+/* Menu */
+@media (min-width: 1024px) and (orientation: landscape) {
+
+    .wrapper.show {
+        padding-left: 300px;
+    }
+
+    .top {
+        height: 100%;
+        left: -300px;
+        width: 300px;
+        border-right: 1px solid rgba(245, 245, 220, 0.2);
+        transition: 0.5s linear;
+    }
+
+    .top.show {
+        left: 0;
+        z-index: 1;
+    }
+
+    .name {
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
+
+    .burger {
+        position: absolute;
+        top: 75%;
+        left: 300px;
+        z-index: 10;
+    }
+
+    nav {
+        top: 100px;
+        left: -300px;
+        height: 100%;
+        width: 300px;
+        border-right: 1px solid rgba(245, 245, 220, 0.2);
+    }
+
+    nav.show {
+        left: 0px;
+    }
+
+    nav.show li {
+        flex-basis: 5%;
+        text-align: center;
+        padding: 10px;
+    }
+
+
+    .column {
+        position: relative;
+        width: 60%;
+    }
+
+    section.about h3 {
+        width: 100%;
+        white-space: wrap;
+    }
+
+    section.about img.grey {
+        display: block;
+        position: absolute;
+        right: 10%;
+        top: 15%;
+        transform: translate(10%, -10%) scale(1);
+        animation: gray 10s linear infinite;
+        overflow: hidden;
+        z-index: -2;
+    }
+
+
+    section.about img.color {
+        display: block;
+
+        height: 35%;
+        position: absolute;
+        right: 5%;
+        top: 55%;
+        transform: translate(10%, -10%) scale(1);
+        animation: color 10s linear infinite;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    a.port{
+        cursor: pointer;
+    }
+}
+
+
