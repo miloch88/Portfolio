@@ -1125,7 +1125,26 @@ section.skills p {
 
     .portfolio .web:hover img {
         filter: grayscale(100%);
+
     }
+
+    .portfolio .project{
+        transition: 1s linear;
+    }
+
+    .portfolio .project:nth-of-type(odd){
+        transform: translate(200vh)
+    }
+
+    .portfolio .project:nth-of-type(even){
+        transform: translate(-200vh)
+    }
+
+    .portfolio .project.active{
+        transform: translate(0);
+    }
+
+
 
     .portfolio .project:nth-of-type(even) .web {
         float: right;
