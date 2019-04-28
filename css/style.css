@@ -8,9 +8,11 @@
     letter-spacing: 2px;
 }
 
-/* body.blur {
-    filter: blur(4px);
-} */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
 
 .wrapper {
     transition: 0.5s linear;
@@ -142,6 +144,7 @@ header {
 header .background {
     width: 100%;
     height: 100%;
+    transition: .5s;
     animation: background 10s linear infinite;
 }
 
@@ -416,17 +419,17 @@ div.skill div i.star:nth-child(5) {
     }
 }
 
-/* PORTFOLIO */
+/* HOBBY */
 
 .wrapper.active {
     filter: blur(2px);
 }
 
-section.portfolio {
+section.port {
     display: none;
 }
 
-section.portfolio.active {
+section.port.active {
     display: block;
     position: fixed;
     top: 0;
@@ -437,7 +440,7 @@ section.portfolio.active {
     z-index: 3;
 }
 
-section.portfolio .modal.active {
+section.port .modal.active {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -453,7 +456,7 @@ section.portfolio .modal.active {
     padding: 0;
 }
 
-section.portfolio div.cog {
+section.port div.cog {
     display: block;
     position: absolute;
     top: 25%;
@@ -464,7 +467,7 @@ section.portfolio div.cog {
 
 }
 
-section.portfolio .modal div.text {
+section.port .modal div.text {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -477,7 +480,7 @@ section.portfolio .modal div.text {
     line-height: 35px;
 }
 
-section.portfolio .modal div.link {
+section.port .modal div.link {
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -489,13 +492,13 @@ section.portfolio .modal div.link {
     justify-content: space-around;
 }
 
-section.portfolio .modal div.link a {
+section.port .modal div.link a {
     flex-basis: 50%;
     font-size: 50px;
     color: rgba(245, 245, 220, 0.2);
 }
 
-section.portfolio .modal.active span.hide i {
+section.port .modal.active span.hide i {
     position: absolute;
     top: 0;
     right: 0;
@@ -554,6 +557,82 @@ div.quote p span {
     position: absolute;
     top: 85%;
     left: 60%;
+}
+
+/* PORTFOLIO */
+section.portfolio {
+    position: relative;
+    width: 100%;
+    height: 950px;
+}
+
+.portfolio .project {
+    position: relative;
+    top: 250px;
+    height: 300px;
+    margin-bottom: 50px;
+}
+
+.portfolio .web {
+    height: 150px;
+}
+
+.portfolio .web img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.portfolio div.about {
+    position: relative;
+    height: 150px;
+    color: white;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+
+}
+
+.portfolio h3 {
+    display: block;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.portfolio .about p {
+    position: absolute;
+    top: 50px;
+    padding: 0;
+    margin: 10px 25px;
+}
+
+.portfolio .project:nth-child(odd) {
+    background-color: rgba(35, 61, 77, 0.7);
+
+}
+
+.portfolio .project:nth-child(odd) h3 {
+    border-bottom: 3px solid #FE7F2D;
+    margin: 10px 0px 10px 25px;
+}
+
+.portfolio .project:nth-child(even) {
+    background-color: rgba(245, 136, 63, 0.7);
+}
+
+.portfolio .project:nth-child(even) h3 {
+    border-bottom: 3px solid #233D4D;
+    width: calc(100% - 25px);
+    margin: 10px 0px;
+    text-align: right;
+}
+
+.portfolio .project:nth-child(even) p {
+    width: calc(100% - 25px);
+    margin: 10px 0px;
+    text-align: right;
 }
 
 /* CONTACT */
@@ -656,7 +735,10 @@ section.about h2,
 section.about h3,
 section.contact h1,
 section.contact h2,
-section.contact h3 {
+section.contact h3,
+section.portfolio h1,
+section.portfolio h2,
+section.portfolio h3 {
     left: 0;
     border-left: 5px solid #FE7F2D;
 }
@@ -683,6 +765,10 @@ section.skills h3 {
     border: none;
 }
 
+section.portfolio h3 {
+    border: none;
+}
+
 section p {
     position: absolute;
     padding: 0;
@@ -699,8 +785,6 @@ section.about p {
 section.skills p {
     top: 900px;
 }
-
-/* POPRAWIONE */
 
 /* LUMIA */
 @media (max-width: 359px) {
@@ -738,22 +822,28 @@ section.skills p {
         font-size: 13px;
     }
 
-    section.portfolio div.cog {
+    section.port div.cog {
         top: 25%;
         font-size: 70px;
     }
 
-    section.portfolio .modal div.text {
+    section.port .modal div.text {
         font-size: 13px;
     }
 
-    section.portfolio .modal div.link {
+    section.port .modal div.link {
         top: 80%;
     }
 }
 
 /* GALAXY S5 */
 @media (max-width: 680px) and (orientation: landscape) {
+
+    nav.show a {
+        line-height: 40%;
+        font-size: 18px;
+    }
+
     header img.small {
         top: 50%;
         width: 100px;
@@ -784,17 +874,17 @@ section.skills p {
         transform: translateX(-50%);
     }
 
-    section.portfolio div.cog {
+    section.port div.cog {
         top: 20%;
         font-size: 60px;
     }
 
-    section.portfolio .modal div.text {
+    section.port .modal div.text {
         font-size: 15px;
         line-height: 30px;
     }
 
-    section.portfolio .modal div.link {
+    section.port .modal div.link {
         top: 82%;
         font-size: 20px;
     }
@@ -883,6 +973,22 @@ section.skills p {
         left: 75%;
     }
 
+    .portfolio .about p {
+        margin: 10px 50px;
+    }
+
+    .portfolio .project:nth-child(odd) h3 {
+        margin: 10px 0px 10px 50px;
+    }
+
+    .portfolio .project:nth-child(even) h3 {
+        width: calc(100% - 50px);
+    }
+
+    .portfolio .project:nth-child(even) p {
+        width: calc(100% - 50px);
+    }
+
     section.contact div.socials {
         font-size: 20px;
         width: 60%;
@@ -890,21 +996,21 @@ section.skills p {
         transform: translateX(-50%);
     }
 
-    section.portfolio div.cog {
+    section.port div.cog {
         top: 25%;
         font-size: 80px;
     }
 
-    section.portfolio .modal div.text {
+    section.port .modal div.text {
         font-size: 25px;
         line-height: 45px;
     }
 
-    section.portfolio .modal div.link {
+    section.port .modal div.link {
         top: 75%;
     }
 
-    section.portfolio .modal div.link a {
+    section.port .modal div.link a {
         font-size: 80px;
     }
 
@@ -913,7 +1019,7 @@ section.skills p {
     }
 }
 
-@media (min-width: 1230px) and (min-width: 750px){
+@media (min-width: 1230px) and (min-width: 750px) {
     header img.small {
         top: 40%;
         width: 180px;
@@ -969,15 +1075,15 @@ section.skills p {
         font-size: 22px;
     }
 
-    section.skills .logo div i{
+    section.skills .logo div i {
         letter-spacing: 5px;
     }
-        
+
     div.skill div i {
         width: 30px;
     }
 
-    section.skills p{
+    section.skills p {
         width: 100%;
         top: 920px;
         font-size: 22px;
@@ -999,6 +1105,53 @@ section.skills p {
         top: 85%;
     }
 
+    .portfolio .project {
+        margin: 0 100px 50px;
+
+    }
+
+    .portfolio .web,
+    .portfolio .about {
+        width: 50%;
+        float: left;
+    }
+
+    .portfolio .web img,
+    .portfolio div.about {
+        height: 300px;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .portfolio .web:hover img {
+        filter: grayscale(100%);
+    }
+
+    .portfolio .project:nth-of-type(even) .web {
+        float: right;
+    }
+
+    .portfolio .project:nth-child(odd) h3 {
+        margin: 25px 0px 20px 50px;
+    }
+
+
+    .portfolio .project:nth-child(even) h3 {
+        margin: 25px 0px;
+        width: calc(100% - 50px);
+    }
+
+    .portfolio .about p {
+        margin: 20px 50px;
+    }
+
+    .portfolio .project:nth-child(even) p {
+        width: calc(100% - 50px);
+        margin: 20px 0px;
+    }
+
+
+
     section.contact div.socials {
         font-size: 20px;
         width: 50%;
@@ -1010,16 +1163,16 @@ section.skills p {
         margin-left: 60px;
     }
 
-    section.portfolio .modal div.text {
+    section.port .modal div.text {
         font-size: 25px;
         line-height: 45px;
     }
 
-    section.portfolio .modal div.link {
+    section.port .modal div.link {
         top: 80%;
     }
 
-    section.portfolio .modal div.link a {
+    section.port .modal div.link a {
         font-size: 80px;
     }
 
@@ -1126,16 +1279,16 @@ section.skills p {
         margin-left: 60px;
     }
 
-    section.portfolio .modal div.text {
+    section.port .modal div.text {
         font-size: 25px;
         line-height: 45px;
     }
 
-    section.portfolio .modal div.link {
+    section.port .modal div.link {
         top: 80%;
     }
 
-    section.portfolio .modal div.link a {
+    section.port .modal div.link a {
         font-size: 80px;
     }
 
@@ -1242,16 +1395,16 @@ section.skills p {
         margin-left: 60px;
     }
 
-    section.portfolio .modal div.text {
+    section.port .modal div.text {
         font-size: 25px;
         line-height: 45px;
     }
 
-    section.portfolio .modal div.link {
+    section.port .modal div.link {
         top: 80%;
     }
 
-    section.portfolio .modal div.link a {
+    section.port .modal div.link a {
         font-size: 80px;
     }
 
@@ -1347,9 +1500,7 @@ section.skills p {
         z-index: -1;
     }
 
-    a.port{
+    a.port {
         cursor: pointer;
     }
 }
-
-
