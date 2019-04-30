@@ -100,7 +100,7 @@ $(document).on("scroll", function() {
   } else {
     $("div.arrow").removeClass("show");
     $("div.skill div i").removeClass("star");
-    $('.art1, .art2').removeClass('active');
+    $('.art1, .art2, .art3').removeClass('active');
   }
 
   //Appear stars
@@ -125,5 +125,12 @@ $(document).on("scroll", function() {
     $(".art2").offset().top + $(".art2").outerHeight() - $(window).height()
   ) {
     $(" .art2").addClass("active");
+  }
+
+  if (
+    $(this).scrollTop() >
+    $(".art3").offset().top + $(".art3").outerHeight() - $(window).height()
+  ) {
+    $(" .art3").addClass("active");
   }
 });
